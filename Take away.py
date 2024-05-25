@@ -1,6 +1,7 @@
 ##Create user account
 while True:
-    print("Welcome! Please choose an option:")
+    print("Welcome to Top Take Away!")
+    print("To continue please choose an option: ")
     print("1. Sign up")
     print("2. Log in")
     print("3. Exit")
@@ -27,10 +28,12 @@ while True:
                         print("Log-in successful!")
                         found = True
                         break
+
             if not found:
                 print("Incorrect username or password.")
         except FileNotFoundError:
             print("No users found. Please sign up first.")
+        break
     
     elif choice == "3":
         print("Goodbye!")
@@ -39,7 +42,67 @@ while True:
     else:
         print("Invalid choice. Please enter 1, 2, or 3.")
 
-##Create menu options
-print("These are our menu options:")
+# Create menu options and store on file with username
+with open("order.txt", "a") as f:
+    f.write("\n" + "\n" + username + ":" "\n")
+while True:
+    print("Welcome, " + username + "!")
+    print("Here are the available cuisines:")
+    print("1. Italian")
+    print("2. Chinese")
+    print("3. Mexican")
+    print("4. Return to main menu")
+    cuisine_choice = input("Enter the number of the cuisine you want to order from: ")
 
-menu = input("What menu would you like to view?")
+    if cuisine_choice == "1":
+        # Italian cuisine
+        print("Italian Menu:")
+        print("1. Pizza")
+        print("2. Pasta")
+        dish_choice = input("Enter the number of the dish you want to order: ")
+        with open("order.txt", "a") as file:
+            file.write("Italian: ")
+            if dish_choice == "1":
+                file.write("Pizza,")
+            elif dish_choice == "2":
+                file.write("Pasta,")
+            else:
+                print("Invalid dish choice.")
+
+    elif cuisine_choice == "2":
+        # Chinese cuisine
+        print("Chinese Menu:")
+        print("1. Fried Rice")
+        print("2. Sweet and Sour Chicken")
+        dish_choice = input("Enter the number of the dish you want to order: ")
+        with open("order.txt", "a") as file:
+            file.write("Chinese: ")
+            if dish_choice == "1":
+                file.write("Fried Rice,")
+            elif dish_choice == "2":
+                file.write("Sweet and Sour Chicken,")
+            else:
+                print("Invalid dish choice.")
+
+    elif cuisine_choice == "3":
+        # Mexican cuisine
+        print("Mexican Menu:")
+        print("1. Tacos")
+        print("2. Burritos")
+        dish_choice = input("Enter the number of the dish you want to order: ")
+        with open("order.txt", "a") as file:
+            file.write("Mexican: ")
+            if dish_choice == "1":
+                file.write("Tacos,")
+            elif dish_choice == "2":
+                file.write("Burritos,")
+            else:
+                print("Invalid dish choice.")
+
+    elif cuisine_choice == "4":
+        break
+
+    else:
+        print("Invalid cuisine choice.")
+
+# Payment & Address
