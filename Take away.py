@@ -51,7 +51,7 @@ while True:
     print("1. Italian")
     print("2. Chinese")
     print("3. Mexican")
-    print("4. Return to main menu")
+    print("4. Continue to payment")
     cuisine_choice = input("Enter the number of the cuisine you want to order from: ")
 
     if cuisine_choice == "1":
