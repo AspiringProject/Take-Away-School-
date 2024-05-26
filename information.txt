@@ -1,8 +1,0 @@
-test:
-paypal:paypalacoount
-address:12 hooville
-
-oli:
-card:42342521,3211,3213
-address:213 gfewfgwrt
-
